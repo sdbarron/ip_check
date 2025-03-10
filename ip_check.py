@@ -15,8 +15,8 @@ def get_current_ip() -> str:
 def get_file_path() -> str:
     try:
         path = os.path.join(os.getenv("HOME"), ".recent_ip", "recent_ip.txt")
-        #print(path)
-        create = os.makedirs(os.path.join(os.getenv("HOME"), ".recent_ip"), exist_ok=True)
+        #print(path) - Where is Jenkins putting the file?
+        create = os.makedirs(os.path.join(os.getenv("HOME"), ".recent_ip"), exist_ok=True)  #make sure the folder exists
         return path
     except:
         return None
