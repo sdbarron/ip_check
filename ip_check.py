@@ -70,7 +70,7 @@ def get_db_stored_ip() -> str:
         conn = psycopg2.connect(**db_params)
         cursor = conn.cursor()
         cursor.execute('SELECT addr FROM ip.ip_hist order by log desc limit 1')
-        addr=cursor.fetchone()
+        addr=cursor.fetchone()[0]
         cursor.close()
         conn.close()
         return addr
